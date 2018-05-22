@@ -1,0 +1,33 @@
+<a href="/employee/add/0"><button >Add</button></a>
+
+<table border="2px" style="padding:1px">
+  <tr>
+      <th>Emp Id</th>
+      <th>Emp name</th>
+      <th>Department</th>
+      <th>Salary</th>
+      <th>Email</th>
+      <th>Options</th>
+  </tr>
+    <tr *ngFor='let emp of employees'>
+      <td>
+        {{emp.id}}
+      </td>
+      <td>
+        {{emp.name}}
+      </td>
+      <td>
+        {{emp.department}}
+      </td>
+      <td>
+        {{emp.salary}}
+      </td>
+      <td>
+        {{emp.email}}
+      </td>
+      <td>
+          <a href="employee/edit/{{emp.id}}"><button>Edit</button></a>
+          <button (click)="deleteEmployee(emp.id)">Delete</button>
+      </td>
+    </tr>
+</table>
